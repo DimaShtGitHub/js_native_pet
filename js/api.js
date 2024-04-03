@@ -1,7 +1,7 @@
 const urlApi = "http://localhost:3000/api/clients";
 
 // получить пользователя
-export const getPerson = async (id) => {
+export const getPersonById = async (id) => {
   const response = await fetch(`${urlApi}/${id}`);
   const data = await response.json();
 

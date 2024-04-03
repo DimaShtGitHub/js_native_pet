@@ -1,4 +1,4 @@
-import { getPersonList, deletePerson, getPerson } from "./api";
+import { getPersonList, deletePerson, getPersonById } from "./api";
 import { bodyHtml } from "./htmlElements";
 import { createAndOpenDeletePersonPopup, createAndOpenPopup } from "./popup";
 const personList = getPersonList();
@@ -13,7 +13,7 @@ export const body = () => {
 
   // заполняем таблицу пользователями
   personList.then((array) => {
-    array.forEach((obj) => tableTbody.appendChild(createTableRow(obj)));
+    array.forEach((obj) => tableTbody.append(createTableRow(obj)));
 
     // for (const child of tableTbody.children) {
     //   const childBtnDelete = child.querySelector("#btn__delete-person");
@@ -76,7 +76,7 @@ export const createTableRow = (person) => {
     const deleteBtn = trElement.querySelector("#btn__delete-person");
 
     editBtn.addEventListener("click", async () => {
-      const personData = await getPerson(person.id);
+      const personData = await getPersonById(person.id);
       createAndOpenPopup(personData);
     });
 
@@ -115,6 +115,8 @@ export const updateTable = async (personList) => {
 
   // сбор таблицы
   personList.forEach((person) => {
-    tableTbody.innerHTML += createTableRow(person);
+    tableTbody.append(createTableRow(person));
+    
+    // tableTbody.innerHTML += createTableRow(person);
   });
 };

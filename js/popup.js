@@ -20,7 +20,7 @@ export const popup = () => {
 };
 
 export const createAndOpenPopup = (data) => {
-  console.log(2);
+  console.log(data);
   const popupSection = document.querySelector(".popup__bg");
   popupSection.classList.add("active");
   popupSection.innerHTML = "";

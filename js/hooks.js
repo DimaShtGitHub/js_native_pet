@@ -30,7 +30,6 @@ export const createPersonHook = (form) => {
   const table = document.querySelector("#table__tbody");
 
   form.addEventListener("submit", async (e) => {
-    console.log("on");
     e.preventDefault();
     const formData = new FormData(form);
 
@@ -40,8 +39,11 @@ export const createPersonHook = (form) => {
       lastName: formData.get("lastName"),
     });
 
-    table.innerHTML += createTableRow(newPerson);
+    // вмонтировает нового пользователя в таблицу
+    table.append(createTableRow(newPerson));
+    // отчищает форму
     form.reset();
+    // закрывает попап
     closePopup();
   });
 };
@@ -63,9 +65,17 @@ export const editPersonHook = (form, data) => {
       contacts: data.contacts,
     });
 
+    // Не получается поменять старую карточку в таблице на новую
+
+    for(const child of table.children) {
+      if(child.id === data.id) {
+        console.log(child);
+        document.querySelector("#table__tbody").replaceChild(child, createTableRow(updatePerson))
+      }
+    }
     // console.log(createTableRow(updatePerson));
 
-    table.replaceChild(oldChild, createTableRow(updatePerson));
+    // table.replaceChild(oldChild, createTableRow(updatePerson));
 
     // createTableRow(updatePerson);
     form.reset();
