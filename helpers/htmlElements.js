@@ -1,4 +1,4 @@
-export const bodyHtml = `
+export const tableHeaderHtml = `
   <div class="body__container">
     <h1>Клиенты</h1>
     <div class="body__table">

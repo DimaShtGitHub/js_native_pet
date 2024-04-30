@@ -1,5 +1,5 @@
 import { getPersonList, deletePerson, getPersonById } from "../../api/api";
-import { bodyHtml } from "../../helpers/htmlElements";
+import { tableHeaderHtml } from "../../helpers/htmlElements";
 import { createAndOpenDeletePersonPopup, createAndOpenPopup } from "../popup/popup";
 const personList = getPersonList();
 
@@ -7,7 +7,7 @@ export const body = () => {
   const sectionElement = document.createElement("section");
   sectionElement.classList.add("body");
 
-  sectionElement.innerHTML += bodyHtml;
+  sectionElement.innerHTML += tableHeaderHtml;
 
   const tableTbody = sectionElement.querySelector("#table__tbody");
 
