@@ -1,6 +1,6 @@
-import { deletePerson } from "./api";
-import { createPersonHook, editPersonHook, useApiMethods } from "./hooks";
-import { popupBody } from "./htmlElements";
+import { deletePerson } from "../../api/api";
+import { createPersonHook, editPersonHook, useApiMethods } from "../../helpers/hooks";
+import { popupBody } from "../../helpers/htmlElements";
 
 export const popup = () => {
   const sectionElment = document.createElement("section");
@@ -20,12 +20,10 @@ export const popup = () => {
 };
 
 export const createAndOpenPopup = (data) => {
-  console.log(data);
   const popupSection = document.querySelector(".popup__bg");
   popupSection.classList.add("active");
   popupSection.innerHTML = "";
 
-  console.log(popupSection);
   // вмонтирование попап в DOM
   popupSection.innerHTML += popupBody;
   const popupContainer = popupSection.querySelector(".popup");

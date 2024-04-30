@@ -1,6 +1,6 @@
-import { header } from "./js/header.js";
-import { body } from "./js/body.js";
-import { createAndOpenPopup, popup } from "./js/popup.js";
+import { header } from "./components/header/header.js";
+import { body } from "./components/body/body.js";
+import { popup } from "./components/popup/popup.js";
 const app = document.querySelector(".app");
 
 // Инициализируем проект

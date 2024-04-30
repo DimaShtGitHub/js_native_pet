@@ -1,6 +1,6 @@
-import { getPersonList, deletePerson, getPersonById } from "./api";
-import { bodyHtml } from "./htmlElements";
-import { createAndOpenDeletePersonPopup, createAndOpenPopup } from "./popup";
+import { getPersonList, deletePerson, getPersonById } from "../../api/api";
+import { bodyHtml } from "../../helpers/htmlElements";
+import { createAndOpenDeletePersonPopup, createAndOpenPopup } from "../popup/popup";
 const personList = getPersonList();
 
 export const body = () => {
