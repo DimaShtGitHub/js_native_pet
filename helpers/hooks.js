@@ -1,6 +1,6 @@
-import { editPerson, getPersonList, setPerson } from "./api";
-import { createTableRow, updateTable } from "./body";
-import { closePopup } from "./popup";
+import { editPerson, getPersonList, setPerson } from "../api/api";
+import { createTableRow, updateTable } from "../components/body/body";
+import { closePopup } from "../components/popup/popup";
 
 export const useApiMethods = (form, method, data) => {
   form.addEventListener("submit", async (e) => {

@@ -1,6 +1,6 @@
-import { deletePerson } from "./api";
-import { createPersonHook, editPersonHook, useApiMethods } from "./hooks";
-import { popupBody } from "./htmlElements";
+import { deletePerson } from "../../api/api";
+import { createPersonHook, editPersonHook, useApiMethods } from "../../helpers/hooks";
+import { popupBody } from "../../helpers/htmlElements";
 
 export const popup = () => {
   const sectionElment = document.createElement("section");
