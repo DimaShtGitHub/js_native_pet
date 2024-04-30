@@ -50,13 +50,10 @@ export const createPersonHook = (form) => {
 
 export const editPersonHook = (form, data) => {
   const table = document.querySelector("#table__tbody");
-  const parrentElement = document.getElementById(data.id);
-  console.log(parrentElement);
-
+  
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    const oldChild = document.getElementById(`${data.id}`);
     const updatePerson = await editPerson({
       id: data.id,
       name: formData.get("name"),
@@ -65,19 +62,12 @@ export const editPersonHook = (form, data) => {
       contacts: data.contacts,
     });
 
-    // Не получается поменять старую карточку в таблице на новую
-
     for(const child of table.children) {
       if(child.id === data.id) {
-        console.log(child);
-        document.querySelector("#table__tbody").replaceChild(child, createTableRow(updatePerson))
+        child.replaceWith(createTableRow(updatePerson))
       }
     }
-    // console.log(createTableRow(updatePerson));
-
-    // table.replaceChild(oldChild, createTableRow(updatePerson));
-
-    // createTableRow(updatePerson);
+    
     form.reset();
     closePopup();
   });
