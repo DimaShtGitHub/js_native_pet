@@ -1,3 +1,4 @@
-Чтобы запустить проект нужно:
-  1. Зайти в папку "skillbus/crm-backend" и запустить комманду "node index" - таким образом мы запускаем сервер который возвращает api методы(back)
-  2. В корне проекта запустить команду "npm run dev" и перейти на сайт
+Start project
+Run command:
+  1. ` node ./skillbus/crm-backend/index.js ` (on server (Api))
+  2. ` npm start `
