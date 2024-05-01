@@ -1,4 +1,5 @@
 import { getPersonList, deletePerson, getPersonById } from "../../api/api";
+import { getIconContact } from "../../helpers/getIconContact";
 import { tableHeaderHtml } from "../../helpers/htmlElements";
 import { createAndOpenDeletePersonPopup, createAndOpenPopup } from "../popup/popup";
 const personList = getPersonList();
@@ -13,6 +14,7 @@ export const body = () => {
 
   // заполняем таблицу пользователями
   personList.then((array) => {
+    console.log(array);
     array.forEach((obj) => tableTbody.append(createTableRow(obj)));
 
     // for (const child of tableTbody.children) {
@@ -65,7 +67,7 @@ export const createTableRow = (person) => {
       <td>${person.surname} ${person.name} ${person.lastName}</td>
       <td>${dateCreate.toLocaleString("Ru", options)}</td>
       <td>${dateUpdate.toLocaleString("Ru", options)}</td>
-      <td>@@@</td>
+      <td>${person.contacts}</td>
       <td>
       <button id="btn__edit-person" class="open-popup" >изменить</button>
       <button id="btn__delete-person" class="close__popup" >удалить</button>

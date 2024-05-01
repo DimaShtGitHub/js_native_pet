@@ -26,6 +26,7 @@ export const useApiMethods = (form, method, data) => {
   });
 };
 
+// Принимает форму и создает нового пользователя 
 export const createPersonHook = (form) => {
   const table = document.querySelector("#table__tbody");
 

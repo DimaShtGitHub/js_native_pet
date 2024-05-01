@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* width: calc(100% + 50px); */
+  width: 100%;
+  min-height: 35px;
+
+  background-color: var(--bg-grey);
+
+  margin: 25px 0px;
+  cursor: pointer;
+}
+
+.container > * {
+  margin-right: 5px;
+}
+
+.img {
+
+}
+
+.text {
+
+}
