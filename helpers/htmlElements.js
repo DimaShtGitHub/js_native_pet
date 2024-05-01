@@ -1,4 +1,4 @@
-export const bodyHtml = `
+export const tableHeaderHtml = `
   <div class="body__container">
     <h1>Клиенты</h1>
     <div class="body__table">
@@ -65,15 +65,22 @@ export const popupBody = `
 
     <div class="popup__footer">
       <div class="popup__btn__add-person">
-        Добавить контакт
       </div>
+
       <input
         form="popup-form"
         type="submit"
         class="popup__btn__save"
         value="Сохранить"
       />
+
       <a href="#">Удалить клиента</a>
     </div>
   </div>
 `;
+
+
+{/* <div class="btn__addcontact" >
+  <img src="./assets/img/add_circle_outline.svg" alt="add pesrson icon" />
+  <span>Добавить контакт</span>
+</div> */}
