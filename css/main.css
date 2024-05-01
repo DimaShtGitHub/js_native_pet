@@ -1,7 +1,6 @@
 @import url('../components/popup/popup.css');
 @import url('../components//header/header.css');
 @import url('../components/body/body.css');
-@import url('./global.css');
 
 html {
   height: 100%;
