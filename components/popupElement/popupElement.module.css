@@ -1,0 +1,30 @@
+.popup__title {
+  display: flex;
+  align-items: center;
+}
+
+.popup__title__text {
+  font-size: 22px;
+  font-weight: 600;
+  padding-right: 20px;
+}
+
+.popup__title__id {
+  color: rgb(206, 201, 201);
+  font-size: 14px;
+}
+
+.close-popup {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(206, 201, 201);
+}
+
+.link__delete-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

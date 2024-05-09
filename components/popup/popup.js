@@ -1,6 +1,7 @@
 import { deletePerson } from "../../api/api";
 import { createPersonHook, editPersonHook, useApiMethods } from "../../helpers/hooks";
 import { popupBody } from "../../helpers/htmlElements";
+import { inputContact, addContact } from "../ui/index";
 
 export const popup = () => {
   const sectionElment = document.createElement("section");
@@ -21,8 +22,11 @@ export const popup = () => {
 
 export const createAndOpenPopup = (data) => {
   const popupSection = document.querySelector(".popup__bg");
+
   popupSection.classList.add("active");
   popupSection.innerHTML = "";
+
+
 
   // вмонтирование попап в DOM
   popupSection.innerHTML += popupBody;
@@ -35,6 +39,19 @@ export const createAndOpenPopup = (data) => {
   closeBtn.addEventListener("click", () => {
     closePopup();
   });
+
+  // Контейнер с добавлением контакта
+  const addPersonContainer = document.querySelector('.popup__btn__add-person');
+  // вмонтировали кнопку "Добавить котанкт"
+  addPersonContainer.append(addContact())
+
+  // добавляем функционал для кнопки добавления контакта
+  const btnAddContact = addPersonContainer.children[0];
+
+  btnAddContact.addEventListener('click', () => {
+    // добавляем поле ввода, выше кнопки
+    addPersonContainer.insertBefore(inputContact(), btnAddContact)
+  })
 
   // работаем с формой
   if (data) {

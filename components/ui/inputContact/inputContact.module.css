@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 20px);
+  height: 35px;
+  border: 1px solid grey;
+  margin-top: 25px;
+}
+
+.btnClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 27px;
+  background-color: #E7E5EB;
+  /* border: 1px solid grey; */
+}
+
