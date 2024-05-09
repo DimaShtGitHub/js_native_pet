@@ -7,7 +7,7 @@ export const customSelect = (options) => {
   options.forEach((el, index) => {
     const option = document.createElement('option')
     option.classList.add(cls.select__option)
-    option.value = index
+    option.value = el
     option.text = el
 
     container.append(option)

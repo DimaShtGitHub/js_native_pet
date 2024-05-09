@@ -27,19 +27,23 @@ export const useApiMethods = (form, method, data) => {
 };
 
 // Принимает форму и создает нового пользователя 
-export const createPersonHook = (form) => {
+export const createPersonHook = (form, contacts) => {
   const table = document.querySelector("#table__tbody");
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
 
-    const newPerson = await setPerson({
+    const personData = {
       surname: formData.get("surname"),
       name: formData.get("name"),
       lastName: formData.get("lastName"),
-    });
+    }
 
+    if(contacts?.length) {
+      personData.contacts = contacts
+    }
+    
+    const newPerson = await setPerson(personData);
     // вмонтировает нового пользователя в таблицу
     table.append(createTableRow(newPerson));
     // отчищает форму

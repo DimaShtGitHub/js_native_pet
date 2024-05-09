@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  width: calc(100% - 50px);
+  width: calc(100% - 20px);
   height: 35px;
   border: 1px solid grey;
   margin-top: 25px;

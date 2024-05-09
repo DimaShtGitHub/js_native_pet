@@ -1,8 +1,7 @@
 import { deletePerson } from "../../api/api";
 import { createPersonHook, editPersonHook, useApiMethods } from "../../helpers/hooks";
 import { popupBody } from "../../helpers/htmlElements";
-import { addContact } from "../ui/addContact/addContact";
-import { inputContact } from "../ui/inputContact/inputContact";
+import { inputContact, addContact } from "../ui/index";
 
 export const popup = () => {
   const sectionElment = document.createElement("section");
